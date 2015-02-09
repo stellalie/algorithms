@@ -2,6 +2,9 @@ public class PercolationStats {
     private double[] results;
 
     public PercolationStats(int N, int T) {
+        if (N <= 0 || T <= 0) {
+            throw new IllegalArgumentException();
+        }
         results = new double[T];
         for (int t = 0; t < T; t++) {
             Percolation percolation = new Percolation(N);
